@@ -34,11 +34,11 @@ jobs:
         #    os: ubuntu-latest,
         #    cc: "gcc", cxx: "g++"
         #  }
-        #- {
-        #    name: "macOS Latest Clang", artifact: "macOS.tar.xz",
-        #    os: macos-latest,
-        #    cc: "clang", cxx: "clang++"
-        #  }
+        - {
+            name: "macOS Latest Clang", artifact: "macOS.tar.xz",
+            os: macos-latest,
+            cc: "clang", cxx: "clang++"
+          }
           
     steps:
       - name: Cache Qt
@@ -52,7 +52,8 @@ jobs:
         uses: jurplel/install-qt-action@v2
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
-        
+          version: 5.13.2
+          
       - uses: actions/checkout@v1
       - name: Configure
         run: |
