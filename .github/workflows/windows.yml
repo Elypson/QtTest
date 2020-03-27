@@ -41,6 +41,18 @@ jobs:
         #  }
           
     steps:
+      - name: Cache Qt
+        id: cache-qt
+        uses: actions/cache@v1
+        with:
+          path: ../Qt
+          key: QtCache
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v2
+        with:
+          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+        
       - uses: actions/checkout@v1
       - name: Configure
         run: |
@@ -48,6 +60,7 @@ jobs:
           cd build
           cmake ..
           ls
+          
       - name: Build
         run: |
           cd build
