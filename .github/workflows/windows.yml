@@ -41,18 +41,30 @@ jobs:
           }
           
     steps:
+      - name: Show Qt dir
+        run: |
+          ls ../Qt
+          
       - name: Cache Qt
         id: cache-qt
         uses: actions/cache@v1
         with:
           path: ../Qt
           key: QtCache
+          
+      - name: Show Qt dir
+        run: |
+          ls ../Qt
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
         with:
-          cached: false #${{ steps.cache-qt.outputs.cache-hit }}
+          cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: 5.13.2
+          
+      - name: Show Qt dir
+        run: |
+          ls ../Qt
           
       - uses: actions/checkout@v1
       - name: Configure
