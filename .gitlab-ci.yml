@@ -1,0 +1,29 @@
+stages:
+- configure
+- buildy
+
+qt_test_configure:windows:
+ stage: configure
+ tags:
+   - windows
+ script:
+  - echo hello there
+  - mkdir build
+  - cd build
+  - cmake ..
+ artifacts:
+  paths:
+   - build
+
+qt_test_build:windows:
+ stage: buildy
+ tags:
+  - windows
+ script:
+  - cd build
+  - cmake ..
+ artifacts:
+  paths:
+   - build
+ dependencies:
+  - qt_test_configure
