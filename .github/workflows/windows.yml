@@ -64,7 +64,7 @@ jobs:
           
       - name: Show Qt dir
         run: |
-          ls ../Qt
+          du -s ../Qt
           
       - uses: actions/checkout@v1
       - name: Configure
