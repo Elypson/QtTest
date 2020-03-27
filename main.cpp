@@ -1,6 +1,8 @@
-#include <iostream>
+#include <QApplication>
 
-int main()
+int main(int argc, char *argv[])
 {
-	std::cout << "Hello world";
+   QApplication app(argc, argv);
+	
+   return app.exec();
 }
