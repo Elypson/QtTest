@@ -41,8 +41,8 @@ jobs:
         #  }
           
     steps:
+      - uses: actions/checkout@v1
       - name: Configure
-        uses: actions/checkout@v1
         run: |
           echo "ls1"
           ls
