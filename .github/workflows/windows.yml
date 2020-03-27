@@ -43,12 +43,14 @@ jobs:
     steps:
       - name: Configure
         run: |
+          echo "ls1"
           ls
           mkdir build
           cd build
+          echo "ls2"
           ls
-          echo %CD%
-          cmake ..
+          pwd
+          "cmake .."
       - name: Build
         run: |
           cd build
