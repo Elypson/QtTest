@@ -41,12 +41,12 @@ jobs:
           }
           
     steps:
-      - name: Cache Qt
-        id: cache-qt
-        uses: actions/cache@v1
-        with:
-          path: ../Qt
-          key: QtCache
+      #- name: Cache Qt
+      #  id: cache-qt
+      #  uses: actions/cache@v1
+      #  with:
+      #    path: ../Qt
+      #    key: QtCache
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
