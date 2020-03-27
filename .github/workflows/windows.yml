@@ -24,7 +24,7 @@ jobs:
             cc: "cl", cxx: "cl",
             environment_script: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat"
           }
-        - {
+        /*- {
             name: "Windows Latest MinGW", artifact: "Windows-MinGW.tar.xz",
             os: windows-latest,
             cc: "gcc", cxx: "g++"
@@ -38,10 +38,11 @@ jobs:
             name: "macOS Latest Clang", artifact: "macOS.tar.xz",
             os: macos-latest,
             cc: "clang", cxx: "clang++"
-          }
+          }*/
           
     steps:
       - name: Configure
+        uses: actions/checkout@v1
         run: |
           echo "ls1"
           ls
