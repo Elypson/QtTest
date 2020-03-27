@@ -42,7 +42,7 @@ jobs:
           
     steps:
       - name: Cache Qt
-        id: cache-qt
+        id: cache-qt2
         uses: actions/cache@v1
         with:
           path: ../Qt
@@ -51,7 +51,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
         with:
-          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          cached: ${{ steps.cache-qt2.outputs.cache-hit }}
           version: 5.13.2
           
       - uses: actions/checkout@v1
