@@ -14,9 +14,10 @@ set(SOURCES main.cpp)
 
 set(LIBS Qt5::Core Qt5::Widgets Qt5::Svg Qt5::Qml Qt5::Quick Qt5::QuickWidgets)
 
+add_executable(QtTest ${SOURCES})
+
 qt5_use_modules(QtTest Quick Core)
 
-add_executable(QtTest ${SOURCES})
 target_link_libraries(QtTest ${LIBS})
 
 set_property(TARGET QtTest PROPERTY CSS_STANDARD 17)
