@@ -41,6 +41,10 @@ jobs:
           }
           
     steps:
+      - name: Show ..
+        run: |
+          ls ..
+          
       - name: Cache Qt
         id: cache-qt
         uses: actions/cache@v1
@@ -50,7 +54,7 @@ jobs:
           
       - name: Show Qt dir
         run: |
-          ls ../Qt
+          ls -R ../Qt
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
