@@ -14,7 +14,7 @@ set(SOURCES main.cpp)
 
 set(LIBS Qt5::Core Qt5::Widgets Qt5::Svg Qt5::Qml Qt5::Quick Qt5::QuickWidgets)
 
-message(Qt5::Core)
+qt5_use_modules(QtTest Quick Core)
 
 add_executable(QtTest ${SOURCES})
 target_link_libraries(QtTest ${LIBS})
