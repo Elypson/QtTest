@@ -39,3 +39,14 @@ jobs:
             os: macos-latest,
             build_type: "Release", cc: "clang", cxx: "clang++"
           }
+          
+    steps:
+      - name: Configure
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+      - name: Build
+        run: |
+          cd build
+          cmake --build .
