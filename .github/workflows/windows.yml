@@ -43,8 +43,11 @@ jobs:
     steps:
       - name: Configure
         run: |
+          ls
           mkdir build
           cd build
+          ls
+          echo %CD%
           cmake ..
       - name: Build
         run: |
